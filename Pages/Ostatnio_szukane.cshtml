@@ -1,0 +1,9 @@
+﻿@page
+@model Ostatnio_szukaneModel
+<div class = "text-center">
+    <p>W bazie jest @Model.Records.Count obiektów. Lista wszystkich osób:</p>
+@foreach(var person in Model.Records.People)
+{
+    <p>@person.FullName @person.Year @person.localDate</p>
+}
+</div>

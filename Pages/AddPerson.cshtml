@@ -1,0 +1,22 @@
+﻿@page
+@model FizzBuzzWeb.Pages.AddPersonModel
+@{
+    ViewData["Title"] = "Add person";
+    var message = ViewData["check"];
+}
+<div class="text-left">
+    <h1 class="display-4">Cześć @Model.Name</h1>
+    <p>Podaj imię i nazwisko oraz rok urodzenia</p>
+    <form method="post">
+        <label asp-for="personVM.FullName"></label><br />
+        <input asp-for="personVM.FullName"/><br />
+        <b><span asp-validation-for="personVM.FullName" class="text-danger"></span></b>
+        <label asp-for="personVM.Year"></label><br />
+        <input asp-for="personVM.Year"/><br />
+        <b><span asp-validation-for="personVM.Year"  class="text-danger"></span></b>
+        <input type="submit" value="Zatwierdź" name="przycisk" class="btn btn-primary mb-2">
+    </form>
+    <div class="alert alert-success" role="alert">
+       @message
+    </div>
+</div>
